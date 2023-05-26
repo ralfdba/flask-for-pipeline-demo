@@ -31,13 +31,6 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=develop"
                 }
             }
-        }
-        
-        stage('Build Project') {
-            steps {
-                sh 'pip install -r requirements.txt'
-                sh 'flask --app hello run'
-            }
-        }
+        }        
     }
 }
